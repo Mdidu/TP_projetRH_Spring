@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,7 +33,7 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping("/save")
-    public ModelAndView saveEmploye(@ModelAttribute Employee employe ) {
+    public ModelAndView saveEmploye(Employee employe ) {
         
 		employeeService.add(employe);
         
@@ -59,10 +58,9 @@ public class EmployeeController {
         return model;
     }
 	
-	@RequestMapping("delete")
+	@RequestMapping("/delete")
 	public ModelAndView delete(long id) {
-
-		System.out.println("id=" + id);
+		
 		Employee employe = employeeService.findById(id);
 		employeeService.delete(employe);
 		ModelAndView model = new ModelAndView("redirect:/list");
@@ -70,7 +68,7 @@ public class EmployeeController {
 		return model;
 	}
 	
-	@RequestMapping("edit")
+	@RequestMapping("/edit")
 	public ModelAndView edit(long id) {
 
 		Employee employe = employeeService.findById(id);
@@ -80,7 +78,7 @@ public class EmployeeController {
 		return model;
 	}
 	
-	@RequestMapping("update")
+	@RequestMapping("/update")
 	public ModelAndView updateEmploye(Employee employe) {
 
 		
