@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.projetRH.domain.Employee;
 import com.projetRH.domain.Sanction;
+import com.projetRH.services.EmployeeService;
 import com.projetRH.services.SanctionService;
 
 @Controller
@@ -18,11 +20,16 @@ public class SanctionController {
 
 	@Autowired
 	SanctionService sanctionService;
+	@Autowired
+	EmployeeService employeeService;
 	
 	@RequestMapping("/addSanction")
-	public ModelAndView addSanction() {
+	public ModelAndView addSanction(long id) {
 		Sanction sanction = new Sanction();
+		Employee employee = employeeService.findById(id);
+		
 		ModelAndView model = new ModelAndView("addSanction", "sanction", sanction);
+		model.addObject("employee", employee);
 		
 		return model;
 	}

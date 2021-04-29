@@ -10,7 +10,9 @@ import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projetRH.domain.Absence;
+import com.projetRH.domain.Employee;
 import com.projetRH.services.AbsenceService;
+import com.projetRH.services.EmployeeService;
 
 @Controller
 @SessionScope
@@ -18,11 +20,16 @@ public class AbsenceController {
 
 	@Autowired
 	AbsenceService absenceService;
+	@Autowired
+	EmployeeService employeeService;
 	
 	@RequestMapping("/addAbsence")
-	public ModelAndView addAbsence() {
+	public ModelAndView addAbsence(long id) {
 		Absence absence = new Absence();
+		Employee employee = employeeService.findById(id);
+		
 		ModelAndView model = new ModelAndView("addAbsence", "absence", absence);
+		model.addObject("employee", employee);
 		
 		return model;
 	}

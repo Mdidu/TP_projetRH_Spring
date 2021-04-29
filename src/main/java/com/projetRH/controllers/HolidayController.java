@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.projetRH.domain.Employee;
 import com.projetRH.domain.Holiday;
+import com.projetRH.services.EmployeeService;
 import com.projetRH.services.HolidayService;
 
 @Controller
@@ -18,11 +20,20 @@ public class HolidayController {
 
 	@Autowired
 	HolidayService holidayService;
+	@Autowired
+	EmployeeService employeeService;
 	
 	@RequestMapping("/addHoliday")
-	public ModelAndView addHoliday() {
+	public ModelAndView addHoliday(long id) {
+		
+		System.out.println("***" + id);
+		Employee employee = employeeService.findById(id);
+		
 		Holiday holiday = new Holiday();
+
 		ModelAndView model = new ModelAndView("addHoliday", "holiday", holiday);
+
+		model.addObject("employee", employee);
 		
 		return model;
 	}

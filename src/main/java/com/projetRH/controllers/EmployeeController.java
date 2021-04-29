@@ -27,7 +27,7 @@ public class EmployeeController {
 	@RequestMapping("/add")
 	public ModelAndView addEmploye() {
 		Employee employe = new Employee();
-		ModelAndView model = new ModelAndView("addEmp", "employe", employe);
+		ModelAndView model = new ModelAndView("addEmp", "employee", employe);
 		
 		return model;
 	}
@@ -73,7 +73,7 @@ public class EmployeeController {
 
 		Employee employe = employeeService.findById(id);
 		
-		ModelAndView model = new ModelAndView("updateEmp", "employe", employe);
+		ModelAndView model = new ModelAndView("updateEmp", "employee", employe);
 		
 		return model;
 	}

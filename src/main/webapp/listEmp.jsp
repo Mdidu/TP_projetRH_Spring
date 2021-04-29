@@ -32,6 +32,9 @@
 			<td>${ e.telNumber }</td>
 			<td><a href="delete?id=${e.idEmployee}">Supprimer</a></td>
 			<td><a href="edit?id=${e.idEmployee}">Modifier</a></td>
+			<td><a href="addHoliday?id=${e.idEmployee}">Ajouter congé</a></td>
+			<td><a href="addSanction?id=${e.idEmployee}">Ajouter une sanction</a></td>
+			<td><a href="addAbsence?id=${e.idEmployee}">Ajouter une absence</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>

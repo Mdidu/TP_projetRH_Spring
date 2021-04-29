@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Formulaire update employé</h2>
-	<form:form action="update" modelAttribute="employe">
+	<h2>Formulaire modification employé ${employee.name} ${employee.lastName}</h2>
+	<form:form action="update" modelAttribute="employee">
 		<form:hidden path="idEmployee" /><br>
 		
 		<form:label path="name">Nom</form:label>

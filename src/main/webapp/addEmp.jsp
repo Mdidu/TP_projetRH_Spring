@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>form ajout employé</h2>
-	<form:form action="save" modelAttribute="employe">
+	<form:form action="save" modelAttribute="employee">
 		<form:label path="name">Nom</form:label>
 		<form:input path="name" /><br>
 		
