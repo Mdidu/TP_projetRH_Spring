@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h2>Formulaire modification congé pour ${employee.name} ${employee.lastName}</h2>
-	<form:form action="updateHoliday" modelAttribute="holiday">
+	<form:form action="update" modelAttribute="holiday">
 		
 		<form:hidden path="idHoliday"/><br>
 		

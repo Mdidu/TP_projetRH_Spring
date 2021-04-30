@@ -16,6 +16,7 @@ import com.projetRH.services.SanctionService;
 
 @Controller
 @SessionScope
+@RequestMapping("/sanction")
 public class SanctionController {
 
 	@Autowired
@@ -23,23 +24,29 @@ public class SanctionController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@RequestMapping("/addSanction")
+	@RequestMapping("/add")
 	public ModelAndView addSanction(long id) {
+		System.out.println("aaaa");
 		Sanction sanction = new Sanction();
 		Employee employee = employeeService.findById(id);
-		
-		ModelAndView model = new ModelAndView("addSanction", "sanction", sanction);
+
+		System.out.println("bbb");
+		ModelAndView model = new ModelAndView("/addSanction", "sanction", sanction);
+
+		System.out.println("ccc");
 		model.addObject("employee", employee);
+
+		System.out.println("dd");
 		
 		return model;
 	}
 	
-	@RequestMapping("/saveSanction")
+	@RequestMapping("/save")
 	public ModelAndView saveSanction(Sanction sanction) {
 	
 		sanctionService.add(sanction);
 		
-		ModelAndView model = new ModelAndView("listSanction");
+		ModelAndView model = new ModelAndView("/listSanction");
 		List<Sanction> listSanctions = new ArrayList<Sanction>();
 		listSanctions = sanctionService.findAll();
 		
@@ -48,10 +55,10 @@ public class SanctionController {
 		return model;
 	}
 	
-	@RequestMapping("/listSanction")
+	@RequestMapping("/list")
 	public ModelAndView listSanction() {
 		
-		ModelAndView model = new ModelAndView("listSanction");
+		ModelAndView model = new ModelAndView("/listSanction");
 		List<Sanction> listSanctions = new ArrayList<Sanction>();
 		listSanctions = sanctionService.findAll();
 		
@@ -60,33 +67,33 @@ public class SanctionController {
 		return model;
 	}
 	
-	@RequestMapping("/deleteSanction")
+	@RequestMapping("/delete")
 	public ModelAndView deleteSanction(long id) {
 		
 		Sanction sanction = sanctionService.findById(id);
 		sanctionService.delete(sanction);
 		
-		ModelAndView model = new ModelAndView("redirect:/listSanction");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}
 	
-	@RequestMapping("/editSanction")
+	@RequestMapping("/edit")
 	public ModelAndView editSanction(long id) {
 		
 		Sanction sanction = sanctionService.findById(id);
 		
-		ModelAndView model = new ModelAndView("updateSanction", "sanction", sanction);
+		ModelAndView model = new ModelAndView("/updateSanction", "sanction", sanction);
 		
 		return model;
 	}
 	
-	@RequestMapping("/updateSanction")
+	@RequestMapping("/update")
 	public ModelAndView updateSanction(Sanction sanction) {
 		
 		sanctionService.update(sanction);
 		
-		ModelAndView model = new ModelAndView("redirect:/listSanction");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}

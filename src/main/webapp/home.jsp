@@ -8,10 +8,10 @@
 </head>
 <body>
 <h2>Accueil</h2>
-<a href="add"> ajout employe</a><br>
-<a href="list">Consultation des employés</a><br>
-<a href="listAbsence">Consultation des absences</a><br>
-<a href="listSanction">Consultation des sanctions</a><br>
-<a href="listHoliday">Consultation des congés</a><br>
+<a href="employee/add"> ajout employe</a><br>
+<a href="employee/list">Consultation des employés</a><br>
+<a href="absence/list">Consultation des absences</a><br>
+<a href="sanction/list">Consultation des sanctions</a><br>
+<a href="holiday/list">Consultation des congés</a><br>
 </body>
 </html>

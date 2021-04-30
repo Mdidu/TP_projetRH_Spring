@@ -24,8 +24,8 @@
 			<td>${ a.justification }</td>
 			<td>${ a.reason }</td>
 			<td>${ a.nbDay }</td>
-			<td><a href="deleteAbsence?id=${a.idAbsence}">Supprimer</a></td>
-			<td><a href="editAbsence?id=${a.idAbsence}">Modifier</a></td>
+			<td><a href="delete?id=${a.idAbsence}">Supprimer</a></td>
+			<td><a href="edit?id=${a.idAbsence}">Modifier</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>

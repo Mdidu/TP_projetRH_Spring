@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>Formulaire modification absence pour ${employee.name} ${employee.lastName}</h2>
-	<form:form action="updateAbsence" modelAttribute="absence">
+	<form:form action="update" modelAttribute="absence">
 		
 		<form:hidden path="idAbsence"/><br>
 		

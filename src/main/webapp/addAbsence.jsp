@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>Formulaire ajout absence pour ${employee.name} ${employee.lastName}</h2>
-	<form:form action="saveAbsence" modelAttribute="absence">
+	<form:form action="save" modelAttribute="absence">
 		<form:label path="justification">Justificatif</form:label>
 		<form:input path="justification" /><br>
 		

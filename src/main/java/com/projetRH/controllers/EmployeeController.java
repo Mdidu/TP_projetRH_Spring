@@ -14,20 +14,16 @@ import com.projetRH.services.EmployeeService;
 
 @Controller
 @SessionScope
+@RequestMapping("/employee")
 public class EmployeeController {
 
 	@Autowired
 	EmployeeService employeeService;
 	
-	@RequestMapping("/")
-	public String home() {
-		return "home";
-	}
-	
 	@RequestMapping("/add")
 	public ModelAndView addEmploye() {
 		Employee employe = new Employee();
-		ModelAndView model = new ModelAndView("addEmp", "employee", employe);
+		ModelAndView model = new ModelAndView("/addEmp", "employee", employe);
 		
 		return model;
 	}
@@ -37,7 +33,7 @@ public class EmployeeController {
         
 		employeeService.add(employe);
         
-        ModelAndView model = new ModelAndView("listEmp");
+        ModelAndView model = new ModelAndView("/listEmp");
         List<Employee> listEmploye = new ArrayList<Employee>();
         listEmploye = employeeService.findAll();
 
@@ -49,7 +45,7 @@ public class EmployeeController {
 	@RequestMapping("/list")
     public ModelAndView listEmploye() {
         
-        ModelAndView model = new ModelAndView("listEmp");
+        ModelAndView model = new ModelAndView("/listEmp");
         List<Employee> listEmploye = new ArrayList<Employee>();
         listEmploye = employeeService.findAll();
 
@@ -63,7 +59,7 @@ public class EmployeeController {
 		
 		Employee employe = employeeService.findById(id);
 		employeeService.delete(employe);
-		ModelAndView model = new ModelAndView("redirect:/list");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}
@@ -73,7 +69,7 @@ public class EmployeeController {
 
 		Employee employe = employeeService.findById(id);
 		
-		ModelAndView model = new ModelAndView("updateEmp", "employee", employe);
+		ModelAndView model = new ModelAndView("/updateEmp", "employee", employe);
 		
 		return model;
 	}
@@ -84,7 +80,7 @@ public class EmployeeController {
 		
 		employeeService.update(employe);
 		
-		ModelAndView model = new ModelAndView("redirect:/list");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}

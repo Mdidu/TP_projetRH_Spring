@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>Formulaire ajout sanction pour ${employee.name} ${employee.lastName}</h2>
-	<form:form action="saveSanction" modelAttribute="sanction">
+	<form:form action="save" modelAttribute="sanction">
 		<form:label path="description">Description</form:label>
 		<form:input path="description" /><br>
 		

@@ -16,6 +16,7 @@ import com.projetRH.services.HolidayService;
 
 @Controller
 @SessionScope
+@RequestMapping("/holiday")
 public class HolidayController {
 
 	@Autowired
@@ -23,27 +24,26 @@ public class HolidayController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@RequestMapping("/addHoliday")
+	@RequestMapping("/add")
 	public ModelAndView addHoliday(long id) {
 		
-		System.out.println("***" + id);
 		Employee employee = employeeService.findById(id);
 		
 		Holiday holiday = new Holiday();
 
-		ModelAndView model = new ModelAndView("addHoliday", "holiday", holiday);
+		ModelAndView model = new ModelAndView("/addHoliday", "holiday", holiday);
 
 		model.addObject("employee", employee);
 		
 		return model;
 	}
 	
-	@RequestMapping("/saveHoliday")
+	@RequestMapping("/save")
 	public ModelAndView saveHoliday(Holiday holiday) {
 	
 		holidayService.add(holiday);
 		
-		ModelAndView model = new ModelAndView("listHoliday");
+		ModelAndView model = new ModelAndView("/listHoliday");
 		List<Holiday> listHolidays = new ArrayList<Holiday>();
 		listHolidays = holidayService.findAll();
 		
@@ -52,10 +52,10 @@ public class HolidayController {
 		return model;
 	}
 	
-	@RequestMapping("/listHoliday")
+	@RequestMapping("/list")
 	public ModelAndView listHoliday() {
 		
-		ModelAndView model = new ModelAndView("listHoliday");
+		ModelAndView model = new ModelAndView("/listHoliday");
 		List<Holiday> listHolidays = new ArrayList<Holiday>();
 		listHolidays = holidayService.findAll();
 		
@@ -64,33 +64,33 @@ public class HolidayController {
 		return model;
 	}
 	
-	@RequestMapping("/deleteHoliday")
+	@RequestMapping("/delete")
 	public ModelAndView deleteHoliday(long id) {
 		
 		Holiday holiday = holidayService.findById(id);
 		holidayService.delete(holiday);
 		
-		ModelAndView model = new ModelAndView("redirect:/listHoliday");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}
 	
-	@RequestMapping("/editHoliday")
+	@RequestMapping("/edit")
 	public ModelAndView editHoliday(long id) {
 		
 		Holiday holiday = holidayService.findById(id);
 		
-		ModelAndView model = new ModelAndView("updateHoliday", "holiday", holiday);
+		ModelAndView model = new ModelAndView("/updateHoliday", "holiday", holiday);
 		
 		return model;
 	}
 	
-	@RequestMapping("/updateHoliday")
+	@RequestMapping("/update")
 	public ModelAndView updateHoliday(Holiday holiday) {
 		
 		holidayService.update(holiday);
 		
-		ModelAndView model = new ModelAndView("redirect:/listHoliday");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}

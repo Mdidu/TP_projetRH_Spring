@@ -26,8 +26,8 @@
 			<td>${ h.startDate }</td>
 			<td>${ h.endDate }</td>
 			<td>${ h.requestDate }</td>
-			<td><a href="deleteHoliday?id=${h.idHoliday}">Supprimer</a></td>
-			<td><a href="editHoliday?id=${h.idHoliday}">Modifier</a></td>
+			<td><a href="delete?id=${h.idHoliday}">Supprimer</a></td>
+			<td><a href="edit?id=${h.idHoliday}">Modifier</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>

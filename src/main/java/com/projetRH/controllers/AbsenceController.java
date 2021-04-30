@@ -16,6 +16,7 @@ import com.projetRH.services.EmployeeService;
 
 @Controller
 @SessionScope
+@RequestMapping("/absence")
 public class AbsenceController {
 
 	@Autowired
@@ -23,23 +24,23 @@ public class AbsenceController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@RequestMapping("/addAbsence")
+	@RequestMapping("/add")
 	public ModelAndView addAbsence(long id) {
 		Absence absence = new Absence();
 		Employee employee = employeeService.findById(id);
 		
-		ModelAndView model = new ModelAndView("addAbsence", "absence", absence);
+		ModelAndView model = new ModelAndView("/addAbsence", "absence", absence);
 		model.addObject("employee", employee);
 		
 		return model;
 	}
 	
-	@RequestMapping("/saveAbsence")
+	@RequestMapping("/save")
 	public ModelAndView saveAbsence(Absence absence) {
 	
 		absenceService.add(absence);
 		
-		ModelAndView model = new ModelAndView("listAbsence");
+		ModelAndView model = new ModelAndView("/listAbsence");
 		List<Absence> listAbsences = new ArrayList<Absence>();
 		listAbsences = absenceService.findAll();
 		
@@ -48,10 +49,10 @@ public class AbsenceController {
 		return model;
 	}
 	
-	@RequestMapping("/listAbsence")
+	@RequestMapping("/list")
 	public ModelAndView listAbsence() {
 		
-		ModelAndView model = new ModelAndView("listAbsence");
+		ModelAndView model = new ModelAndView("/listAbsence");
 		List<Absence> listAbsences = new ArrayList<Absence>();
 		listAbsences = absenceService.findAll();
 		
@@ -60,33 +61,33 @@ public class AbsenceController {
 		return model;
 	}
 	
-	@RequestMapping("/deleteAbsence")
+	@RequestMapping("/delete")
 	public ModelAndView deleteAbsence(long id) {
 		
 		Absence absence = absenceService.findById(id);
 		absenceService.delete(absence);
 		
-		ModelAndView model = new ModelAndView("redirect:/listAbsence");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}
 	
-	@RequestMapping("/editAbsence")
+	@RequestMapping("/edit")
 	public ModelAndView editAbsence(long id) {
 		
 		Absence absence = absenceService.findById(id);
 		
-		ModelAndView model = new ModelAndView("updateAbsence", "absence", absence);
+		ModelAndView model = new ModelAndView("/updateAbsence", "absence", absence);
 		
 		return model;
 	}
 	
-	@RequestMapping("/updateAbsence")
+	@RequestMapping("/update")
 	public ModelAndView updateAbsence(Absence absence) {
 		
 		absenceService.update(absence);
 		
-		ModelAndView model = new ModelAndView("redirect:/listAbsence");
+		ModelAndView model = new ModelAndView("redirect:list");
 		
 		return model;
 	}

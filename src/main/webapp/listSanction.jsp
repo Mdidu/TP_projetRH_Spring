@@ -22,8 +22,8 @@
 		<tr >
 			<td>${ s.description }</td>
 			<td>${ s.sanctionType }</td>
-			<td><a href="deleteSanction?id=${s.idSanction}">Supprimer</a></td>
-			<td><a href="editSanction?id=${s.idSanction}">Modifier</a></td>
+			<td><a href="delete?id=${s.idSanction}">Supprimer</a></td>
+			<td><a href="edit?id=${s.idSanction}">Modifier</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>
