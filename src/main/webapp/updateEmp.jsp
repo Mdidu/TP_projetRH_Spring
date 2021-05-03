@@ -1,41 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Modifier employé</title>
-<link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Modifier sanction</title>
+<link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css"
+	rel="stylesheet">
 </head>
 <body class="container-fluid">
-	<h2 class="text-center">Formulaire modification employé ${employee.name} ${employee.lastName}</h2>
+	<c:import url="http://localhost:8082/projetRH/navbar.html" />
+
+	<h2 class="text-center">Formulaire modification employÃ© ${employee.name} ${employee.lastName}</h2>
 	<form:form action="update" modelAttribute="employee">
 		<form:hidden path="idEmployee" />
 		
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="name">Nom</form:label>
-			<form:input class="form-control col-sm-9" path="name" />
+			<form:input class="form-control col-sm-7" path="name" />
 		</div>
 
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="lastName">Prénom</form:label>
-			<form:input class="form-control col-sm-9" path="lastName" />
+			<form:label class="col-sm-3" path="lastName">PrÃ©nom</form:label>
+			<form:input class="form-control col-sm-7" path="lastName" />
 		</div>
 
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="adress">Adresse</form:label>
-			<form:input class="form-control col-sm-9" path="adress"></form:input>
+			<form:input class="form-control col-sm-7" path="adress"></form:input>
 		</div>
 
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="average">Salaire</form:label>
-			<form:input class="form-control col-sm-9" path="average" />
+			<form:input class="form-control col-sm-7" path="average" />
 		</div>
 
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="telNumber">Numéro téléphone</form:label>
-			<form:input class="form-control col-sm-9" path="telNumber" />
+			<form:label class="col-sm-3" path="telNumber">NumÃ©ro tÃ©lÃ©phone</form:label>
+			<form:input class="form-control col-sm-7" path="telNumber" />
 		</div>
 		
 		<div class="row form-group ml-4">

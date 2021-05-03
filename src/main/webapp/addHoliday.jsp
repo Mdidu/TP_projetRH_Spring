@@ -1,36 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Ajout congé</title>
-<link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Ajout congÃ©</title>
+<link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css"
+	rel="stylesheet">
 </head>
 <body class="container-fluid">
-	<h2 class="text-center">form ajout congé pour ${employee.name}
+	<c:import url="http://localhost:8082/projetRH/navbar.html" />
+
+	<h2 class="text-center">form ajout congÃ© pour ${employee.name}
 		${employee.lastName}</h2>
 	<form:form action="save" modelAttribute="holiday">
 	
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="holidayPay">Solde de congé</form:label>
-			<form:input class="form-control col-sm-9" path="holidayPay" />
+			<form:label class="col-sm-3" path="holidayPay">Solde de congÃ©</form:label>
+			<form:input class="form-control col-sm-7" path="holidayPay" />
 		</div>
 		
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="startDate">Date de début (format mm/dd/yy)</form:label>
-			<form:input class="form-control col-sm-9" path="startDate" />
+			<form:label class="col-sm-3" path="startDate">Date de dÃ©but (format mm/dd/yy)</form:label>
+			<form:input class="form-control col-sm-7" path="startDate" />
 		</div>
 		
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="endDate">Date de fin (format mm/dd/yy)</form:label>
-			<form:input class="form-control col-sm-9" path="endDate" />
+			<form:input class="form-control col-sm-7" path="endDate" />
 		</div>
 		
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="requestDate">Date de demande (format mm/dd/yy)</form:label>
-			<form:input class="form-control col-sm-9" path="requestDate" />
+			<form:input class="form-control col-sm-7" path="requestDate" />
 		</div>
 
 		<form:hidden path="employee" value="${employee.idEmployee}" />
