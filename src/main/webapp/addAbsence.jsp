@@ -1,27 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Ajout absence</title>
+<link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css"
+	rel="stylesheet">
 </head>
-<body>
-	<h2>Formulaire ajout absence pour ${employee.name} ${employee.lastName}</h2>
+<body class="container-fluid">
+	<h2 class="text-center">Formulaire ajout absence pour
+		${employee.name} ${employee.lastName}</h2>
 	<form:form action="save" modelAttribute="absence">
-		<form:label path="justification">Justificatif</form:label>
-		<form:input path="justification" /><br>
-		
-		<form:label path="reason">Raison</form:label>
-		<form:input path="reason" /><br>
-		
-		<form:label path="nbDay">Nombre de jour</form:label>
-		<form:input path="nbDay" /><br>
-		
-		<form:hidden path="employee" value="${employee.idEmployee}"/><br>
-		
-		<input type="submit" value="Valider" />
+		<div class="row form-group ml-4">
+			<form:label class="col-sm-3" path="justification">Justificatif</form:label>
+			<form:input class="form-control col-sm-9" path="justification" />
+		</div>
+
+		<div class="row form-group ml-4">
+			<form:label class="col-sm-3" path="reason">Raison</form:label>
+			<form:input class="form-control col-sm-9" path="reason" />
+		</div>
+
+		<div class="row form-group ml-4">
+			<form:label class="col-sm-3" path="nbDay">Nombre de jour</form:label>
+			<form:input class="form-control col-sm-9" path="nbDay" />
+		</div>
+
+		<form:hidden path="employee" value="${employee.idEmployee}" />
+
+		<div class="row form-group ml-4">
+			<input class="form-control btn btn-primary col-sm-2" type="submit"
+				value="Valider" />
+		</div>
 	</form:form>
 </body>
 </html>

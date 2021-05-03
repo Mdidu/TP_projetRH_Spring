@@ -5,11 +5,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Liste des absences</title>
+<link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<table id="table-1">
-	<thead>
+<body class="container-fluid">
+
+<table id="table-1" class="table table-striped table-bordered">
+	<thead class="thead-dark">
 		<tr>
 			<th>Justificatif</th>
 			<th>Raison</th>
@@ -20,12 +22,12 @@
 	</thead>
 	<tbody>
 	<c:forEach items="${absence}" var="a">
-		<tr >
+		<tr>
 			<td>${ a.justification }</td>
 			<td>${ a.reason }</td>
 			<td>${ a.nbDay }</td>
-			<td><a href="delete?id=${a.idAbsence}">Supprimer</a></td>
-			<td><a href="edit?id=${a.idAbsence}">Modifier</a></td>
+			<td><a class="btn btn-primary" href="delete?id=${a.idAbsence}">Supprimer</a></td>
+			<td><a class="btn btn-primary" href="edit?id=${a.idAbsence}">Modifier</a></td>
 		</tr>
 	</c:forEach>
 	</tbody>

@@ -26,17 +26,12 @@ public class SanctionController {
 	
 	@RequestMapping("/add")
 	public ModelAndView addSanction(long id) {
-		System.out.println("aaaa");
 		Sanction sanction = new Sanction();
 		Employee employee = employeeService.findById(id);
 
-		System.out.println("bbb");
 		ModelAndView model = new ModelAndView("/addSanction", "sanction", sanction);
 
-		System.out.println("ccc");
 		model.addObject("employee", employee);
-
-		System.out.println("dd");
 		
 		return model;
 	}
