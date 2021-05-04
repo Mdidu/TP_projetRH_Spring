@@ -15,3 +15,5 @@ Rendu visuel de certaines pages :
 ![image](https://user-images.githubusercontent.com/56021893/116975807-7b769780-acc0-11eb-87a0-66d8e59ba5d6.png)
 
 ![image](https://user-images.githubusercontent.com/56021893/116975862-9517df00-acc0-11eb-8646-2ee9206b2984.png)
+
+![image](https://user-images.githubusercontent.com/56021893/117009548-2c465c00-acec-11eb-94f7-b734c67d6007.png)
