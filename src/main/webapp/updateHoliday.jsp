@@ -30,19 +30,19 @@
 		
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="startDate">Date de début</form:label>
-			<fmt:formatDate value="${holiday.startDate}" var="start" pattern="MM/dd/yy" />
+			<fmt:formatDate value="${holiday.startDate}" var="start" pattern="yyyy/MM/dd" />
 			<form:input class="form-control col-sm-7" type="date" path="startDate" value="${start}" />
 		</div>
 		
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="endDate">Date de fi</form:label>
-			<fmt:formatDate value="${holiday.endDate}" var="end" pattern="MM/dd/yy" />
+			<form:label class="col-sm-3" path="endDate">Date de fin</form:label>
+			<fmt:formatDate value="${holiday.endDate}" var="end" pattern="yyyy/MM/dd" />
 			<form:input class="form-control col-sm-7" type="date" path="endDate" value="${end}" />
 		</div>
 		
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="requestDate">Date de demande</form:label>
-			<fmt:formatDate value="${holiday.requestDate}" var="request" pattern="dd/MM/yy" />
+			<fmt:formatDate value="${holiday.requestDate}" var="request" pattern="yyyy/MM/dd" />
 			<form:input class="form-control col-sm-7" type="date" path="requestDate" value="${request}" />
 		</div>
 
