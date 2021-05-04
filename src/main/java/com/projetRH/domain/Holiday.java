@@ -2,6 +2,9 @@ package com.projetRH.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -22,15 +25,18 @@ public class Holiday implements Serializable {
 	private long idHoliday;
 
 	@Column(name="END_DATE")
+	@DateTimeFormat(fallbackPatterns = {"yyyy/MM/dd", "yyyy-MM-dd"})
 	private Date endDate;
 
 	@Column(name="HOLIDAY_PAY")
 	private BigDecimal holidayPay;
 
 	@Column(name="REQUEST_DATE")
+	@DateTimeFormat(fallbackPatterns = {"yyyy/MM/dd", "yyyy-MM-dd"})
 	private Date requestDate;
 
 	@Column(name="START_DATE")
+	@DateTimeFormat(fallbackPatterns = {"yyyy/MM/dd", "yyyy-MM-dd"})
 	private Date startDate;
 
 	//bi-directional many-to-one association to Employee

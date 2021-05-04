@@ -34,15 +34,15 @@ public class Employee implements Serializable {
 	private String telNumber;
 
 	//bi-directional many-to-one association to Absence
-	@OneToMany(mappedBy="employee")
+	@OneToMany(mappedBy="employee", cascade = CascadeType.ALL)
 	private List<Absence> absences;
 
 	//bi-directional many-to-one association to Holiday
-	@OneToMany(mappedBy="employee")
+	@OneToMany(mappedBy="employee", cascade = CascadeType.ALL)
 	private List<Holiday> holidays;
 
 	//bi-directional many-to-one association to Sanction
-	@OneToMany(mappedBy="employee")
+	@OneToMany(mappedBy="employee", cascade = CascadeType.ALL)
 	private List<Sanction> sanctions;
 
 	public Employee() {

@@ -26,18 +26,18 @@
 		</div>
 		
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="startDate">Date de début (format mm/dd/yy)</form:label>
-			<form:input class="form-control col-sm-7" path="startDate" />
+			<form:label class="col-sm-3" path="startDate">Date de début</form:label>
+			<form:input type="date" class="form-control col-sm-7" path="startDate" />
 		</div>
 		
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="endDate">Date de fin (format mm/dd/yy)</form:label>
-			<form:input class="form-control col-sm-7" path="endDate" />
+			<form:label class="col-sm-3" path="endDate">Date de fin</form:label>
+			<form:input type="date" class="form-control col-sm-7" path="endDate"/>
 		</div>
 		
 		<div class="row form-group ml-4">
-			<form:label class="col-sm-3" path="requestDate">Date de demande (format mm/dd/yy)</form:label>
-			<form:input class="form-control col-sm-7" path="requestDate" />
+			<form:label class="col-sm-3" path="requestDate">Date de demande</form:label>
+			<form:input type="date" class="form-control col-sm-7" path="requestDate"/>
 		</div>
 
 		<form:hidden path="employee" value="${employee.idEmployee}" />
