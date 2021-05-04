@@ -7,6 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Modifier sanction</title>
+<script defer="defer" src="../webjars/jquery/1.9.1/jquery.min.js"></script>
+<script defer="defer" src="../webjars/popper.js/1.16.0/umd/popper.min.js"></script>
+<script defer="defer" src="../webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
@@ -46,5 +49,7 @@
 			<input class="form-control btn btn-primary col-sm-2" type="submit" value="Valider" />
 		</div>
 	</form:form>
+	
+	<c:import url="http://localhost:8082/projetRH/footer.html" />
 </body>
 </html>

@@ -1,21 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarNav" aria-controls="navbarNav"
-		aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link"
-				href="employee/add"> ajout employe</a></li>
-			<li class="nav-item"><a class="nav-link" href="employee/list">Consultation
-					des employes</a></li>
-			<li class="nav-item"><a class="nav-link" href="absence/list">Consultation
-					des absences</a></li>
-			<li class="nav-item"><a class="nav-link" href="sanction/list">Consultation
-					des sanctions</a></li>
-			<li class="nav-item"><a class="nav-link" href="holiday/list">Consultation
-					des conges</a></li>
-		</ul>
-	</div>
+<div class="jumbotron text-center">
+	<h1>Systeme d'information de gestion des ressources humaines</h1>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link" href="./">Accueil</a></li>
+
+		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+			href="#" id="navbardrop1" data-toggle="dropdown"> Employe </a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="employee/add">Ajouter</a> <a
+					class="dropdown-item" href="employee/list">Consulter</a>
+			</div></li>
+
+		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+			href="#" id="navbardrop1" data-toggle="dropdown"> Conge </a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="holiday/list">Consulter</a>
+			</div></li>
+
+		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+			href="#" id="navbardrop1" data-toggle="dropdown"> Absence </a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="absence/list">Consulter</a>
+			</div></li>
+
+		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+			href="#" id="navbardrop1" data-toggle="dropdown"> Sanction </a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="sanction/list">Consulter</a>
+			</div></li>
+	</ul>
 </nav>
