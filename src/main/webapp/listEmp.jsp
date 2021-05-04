@@ -8,8 +8,10 @@
 <meta charset="UTF-8">
 <title>Liste des employés</title>
 <script defer="defer" src="../webjars/jquery/1.9.1/jquery.min.js"></script>
-<script defer="defer" src="../webjars/popper.js/1.16.0/umd/popper.min.js"></script>
-<script defer="defer" src="../webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script defer="defer"
+	src="../webjars/popper.js/1.16.0/umd/popper.min.js"></script>
+<script defer="defer"
+	src="../webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
@@ -41,20 +43,45 @@
 					<td>${ e.adress }</td>
 					<td>${ e.average }</td>
 					<td>${ e.telNumber }</td>
-					<td><a href="delete?id=${e.idEmployee}">Supprimer</a></td>
-					<td><a href="edit?id=${e.idEmployee}">Modifier</a></td>
-					<td><a class="btn btn-primary" href="./../holiday/add?id=${e.idEmployee}">Ajouter
-							congé</a></td>
+					<td><button type="button" class="btn btn-primary"
+							data-toggle="modal" data-target="#delete${e.idEmployee}">Supprimer</button></td>
+					<td><a class="btn btn-primary" href="edit?id=${e.idEmployee}">Modifier</a></td>
+					<td><a class="btn btn-primary"
+						href="./../holiday/add?id=${e.idEmployee}">Ajouter congé</a></td>
 					<td><a class="btn btn-primary"
 						href="./../sanction/add?id=${e.idEmployee}">Ajouter une
 							sanction</a></td>
 					<td><a class="btn btn-primary"
 						href="./../absence/add?id=${e.idEmployee}">Ajouter une absence</a></td>
 				</tr>
+
+				<div id="delete${e.idEmployee}" class="modal" tabindex="-1"
+					role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Supprimer employé</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<p>Voulez-vous supprimer l'employé ${ e.name } ${ e.lastName }?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+								<a class="btn btn-primary" href="delete?id=${e.idEmployee}">Supprimer</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			</c:forEach>
 		</tbody>
 	</table>
-	
+
 	<cc:import url="http://localhost:8082/projetRH/footer.html" />
 </body>
 </html>

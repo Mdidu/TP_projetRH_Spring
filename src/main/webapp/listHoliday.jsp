@@ -8,8 +8,10 @@
 <meta charset="UTF-8">
 <title>Liste des congé</title>
 <script defer="defer" src="../webjars/jquery/1.9.1/jquery.min.js"></script>
-<script defer="defer" src="../webjars/popper.js/1.16.0/umd/popper.min.js"></script>
-<script defer="defer" src="../webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script defer="defer"
+	src="../webjars/popper.js/1.16.0/umd/popper.min.js"></script>
+<script defer="defer"
+	src="../webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <link href="../webjars/bootstrap/4.6.0/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
@@ -34,13 +36,37 @@
 					<td>${ h.startDate }</td>
 					<td>${ h.endDate }</td>
 					<td>${ h.requestDate }</td>
-					<td><a class="btn btn-primary" href="delete?id=${h.idHoliday}">Supprimer</a></td>
+					<td><button type="button" class="btn btn-primary"
+							data-toggle="modal" data-target="#delete${h.idHoliday}">Supprimer</button></td>
 					<td><a class="btn btn-primary" href="edit?id=${h.idHoliday}">Modifier</a></td>
 				</tr>
+
+				<div id="delete${h.idHoliday}" class="modal" tabindex="-1"
+					role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Supprimer congés</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<p>Voulez-vous supprimer les congés sélectionné?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+								<a class="btn btn-primary" href="delete?id=${h.idHoliday}">Supprimer</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</c:forEach>
 		</tbody>
 	</table>
-	
+
 	<cc:import url="http://localhost:8082/projetRH/footer.html" />
 </body>
 </html>

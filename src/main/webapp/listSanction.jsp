@@ -30,10 +30,34 @@
 				<tr>
 					<td>${ s.description }</td>
 					<td>${ s.sanctionType }</td>
-					<td><a class="btn btn-primary"
-						href="delete?id=${s.idSanction}">Supprimer</a></td>
+					<td><button type="button" class="btn btn-primary"
+							data-toggle="modal" data-target="#delete${s.idSanction}">Supprimer</button></td>
 					<td><a class="btn btn-primary" href="edit?id=${s.idSanction}">Modifier</a></td>
 				</tr>
+				
+				<div id="delete${s.idSanction}" class="modal" tabindex="-1"
+					role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Supprimer sanctions</h5>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<p>Voulez-vous supprimer la sanction sélectionné?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Close</button>
+								<a class="btn btn-primary" href="delete?id=${s.idSanction}">Supprimer</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			</c:forEach>
 		</tbody>
 	</table>
