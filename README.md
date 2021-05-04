@@ -10,10 +10,8 @@ Stack :
 
 Rendu visuel de certaines pages : 
 
-![image](https://user-images.githubusercontent.com/56021893/116889121-81229d80-ac2c-11eb-96ff-1c2df6847846.png)
+![image](https://user-images.githubusercontent.com/56021893/116975932-b8428e80-acc0-11eb-8637-568218c337f4.png)
 
-![image](https://user-images.githubusercontent.com/56021893/116889253-a44d4d00-ac2c-11eb-9d94-2b1ca756c8a5.png)
+![image](https://user-images.githubusercontent.com/56021893/116975807-7b769780-acc0-11eb-87a0-66d8e59ba5d6.png)
 
-![image](https://user-images.githubusercontent.com/56021893/116889354-bdee9480-ac2c-11eb-9327-0a9ca6bd73dd.png)
-
-![image](https://user-images.githubusercontent.com/56021893/116889424-d494eb80-ac2c-11eb-8353-debb9216c272.png)
+![image](https://user-images.githubusercontent.com/56021893/116975862-9517df00-acc0-11eb-8646-2ee9206b2984.png)
