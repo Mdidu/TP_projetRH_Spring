@@ -39,7 +39,7 @@
 		
 		<div class="row form-group ml-4">
 			<form:label class="col-sm-3" path="requestDate">Date de demande (format mm/dd/yy)</form:label>
-			<fmt:formatDate value="${holiday.requestDate}" var="request" pattern="MM/dd/yy" />
+			<fmt:formatDate value="${holiday.requestDate}" var="request" pattern="dd/MM/yyyy" />
 			<form:input class="form-control col-sm-7" type="date" path="requestDate" value="${request}" />
 		</div>
 

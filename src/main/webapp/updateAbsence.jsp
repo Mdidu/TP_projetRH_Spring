@@ -15,6 +15,7 @@
 
 	<h2 class="text-center">Formulaire modification absence pour
 		${employee.name} ${employee.lastName}</h2>
+		
 	<form:form action="update" modelAttribute="absence">
 
 		<form:hidden path="idAbsence" />
